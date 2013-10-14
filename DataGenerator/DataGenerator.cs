@@ -26,7 +26,7 @@ namespace recursive_aggregation_linq.DataGenerator
                         Assignment x = new Assignment(level2);
                         foreach (Student s in Student.allStudents)
                         {
-                            new Submission("submission" + (a + b + c ^ 2), s, x);
+                            new Submission("submission" + (a + b + c ^ 2 + s.Id * 37), s, x);
                         }
                     }
                 }

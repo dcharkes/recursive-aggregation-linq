@@ -9,6 +9,7 @@ namespace recursive_aggregation_linq.Model
         public static HashSet<Student> allStudents;
         private static int nextId = 1;
         private int id { get; set; }
+        public int Id { get { return id; } }
 
 
         public Student()

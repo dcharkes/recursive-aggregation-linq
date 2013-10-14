@@ -7,8 +7,9 @@ namespace recursive_aggregation_linq.Model
     class Submission
     {
         private String data;
-        private Student student;
+        public Student student { get; private set; }
         private Assignment assignment;
+        public static int GradeCalculations { get; private set; }
 
         public Submission(String d, Student s, Assignment a)
         {
@@ -17,6 +18,15 @@ namespace recursive_aggregation_linq.Model
             assignment = a;
             s.addSubmission(this);
             a.addSubmission(this);
+        }
+
+        public double Grade
+        {
+            get
+            {
+                GradeCalculations++;
+                return Double.Parse(data.Substring(10)) / 10 % 10;
+            }
         }
     }
 }

@@ -11,15 +11,21 @@ namespace recursive_aggregation_linq.Model
         public Assignment(Unit u)
         {
             unit = u;
-            submissions = new List<Submission>();
+            submissions = new Dictionary<Student, Submission>();
             u.addAssignment(this);
         }
 
-        private List<Submission> submissions;
-        public IEnumerable<Submission> Submissions { get { return submissions.AsReadOnly(); } }
+        private Dictionary<Student, Submission> submissions;
+        public IDictionary<Student, Submission> Submissions { get { return submissions; } }
         public void addSubmission(Submission s)
         {
-            submissions.Add(s);
+            submissions.Add(s.student, s);
+        }
+
+        public double MeanGrade { 
+            get {
+                return submissions.Values.Average(s => s.Grade);
+            } 
         }
 
     }
