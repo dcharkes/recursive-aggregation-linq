@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using recursive_aggregation_linq.DataGenerator;
+using recursive_aggregation_linq.Model;
 
 namespace recursive_aggregation_linq
 {
@@ -10,6 +10,7 @@ namespace recursive_aggregation_linq
     {
         static void Main(string[] args)
         {
+            Unit root = DataGenerator.DataGenerator.generateDataStructure();
             Console.WriteLine("Hello World!");
             Console.ReadKey();
         }

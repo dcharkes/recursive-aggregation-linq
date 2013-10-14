@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataGenerator\DataGenerator.cs" />
+    <Compile Include="Model\Assignment.cs" />
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\Submission.cs" />
+    <Compile Include="Model\Unit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
